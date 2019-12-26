@@ -10,9 +10,14 @@ public class Main {
         myStack.add(1);
         myStack.add("stroka");
         myStack.add(new Men("Ivan", 10));
+        myStack.add(2);
+        myStack.add("stroka2");
+        myStack.add(new Men("Arman", 20));
 
         System.out.println("метод peek " + myStack.peek());
-
+//
+        System.out.println("метод pope " + myStack.pope());
+        System.out.println("метод pope " + myStack.pope());
         System.out.println("метод pope " + myStack.pope());
         System.out.println("метод pope " + myStack.pope());
         System.out.println("метод pope " + myStack.pope());
@@ -26,13 +31,19 @@ public class Main {
         myQueue.add(1);
         myQueue.add("stroka");
         myQueue.add(new Men("Ivan", 10));
-
+        myQueue.add(2);
+        myQueue.add("stroka2");
+        myQueue.add(new Men("Arman", 20));
+//
         System.out.println("метод peek " + myQueue.peek());
         System.out.println("метод pope " + myQueue.pope());
         System.out.println("метод pope " + myQueue.pope());
         System.out.println("метод pope " + myQueue.pope());
         System.out.println("метод pope " + myQueue.pope());
         System.out.println("метод pope " + myQueue.pope());
+        System.out.println("метод pope " + myQueue.pope());
+        System.out.println("метод pope " + myQueue.pope());
+
 
     }
 }

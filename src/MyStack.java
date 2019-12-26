@@ -1,28 +1,30 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
 
-public class MyStack {
-    private ArrayList stack = new ArrayList();
+
+public class MyStack extends MyLinkedList {
+
 
     public void add(Object value){
         if (value == null) return;
-        stack.add(value);
+        super.add(value);
     }
 
     public Object peek(){
-        if (stack.size() < 1) return "Значений не имеется";
-        return stack.get(stack.size() - 1);
+        if (super.getCount() < 1) return "Значений не имеется";
+        return super.getLast();
     }
 
     public Object pope(){
+
+        int count = super.getCount();
+        if (count == 0) return "Значений не имеется";
+
         Object lastValue = peek();
-
         try {
-            stack.remove(stack.size() - 1);
-        } catch (IndexOutOfBoundsException e){
-            return "Значений не имеется";
-        }
+            super.deleteByIndex(count - 1);
+        } catch (NullPointerException e){
 
+        }
+//
         return lastValue;
     }
 }

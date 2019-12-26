@@ -1,24 +1,29 @@
 import java.util.LinkedList;
 
-public class MyQueue {
-    private LinkedList queue = new LinkedList();
+public class MyQueue extends MyLinkedList {
+//    private LinkedList queue = new LinkedList();
 
     public void add(Object value){
-        if (value == null)
-            return;
-        queue.add(value);
+        if (value == null) return;
+        super.add(value);
     }
 
     public Object peek(){
-        if (queue.size() < 1) return "Список пуст";
-        return queue.peekFirst();
+        if (super.getCount() < 1) return "Значений не имеется";
+        return super.getFirst();
     }
 
     public Object pope(){
-        if (queue.size() == 0)
-            return "Значений не имеется";
+        int count = super.getCount();
+        if (count == 0) return "Значений не имеется";
+
         Object firstValue = peek();
-        queue.removeFirst();
+        try {
+            super.deleteByIndex(0);
+        } catch (NullPointerException e){
+
+        }
+//
         return firstValue;
     }
 }
